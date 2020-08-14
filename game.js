@@ -109,7 +109,7 @@ function timer() {
       }
 
       timeCounter.innerHTML = '<i class="far fa-hourglass-start"></i>' +
-       "Timer: " + minutes + "Mins" + seconds + "secs";
+       "Timer: " + minutes + " Mins " + seconds + " secs";
     }, 1000);
 }
 
@@ -127,14 +127,20 @@ function resetEverything() {
 
       //Reset star count add the class back to show stars again
 
-      star[1].firstElementChild.classList.add("fa-star");
-      star[2].firstElementChild.classList.add("fa-star");
+      if (star[1] && star[1].firstElementChild) {
+        star[1].firstElementChild.classList.add("fa-star");
+      }
+      if (star[2] && star[2].firstElementChild) {
+        star[2].firstElementChild.classList.add("fa-star");
+      }
       starCount = 3;
 
       //Reset moves count and reset its inner HTML
 
       moves = 0;
-      movesCount.innerHTML = 0;
+      movesCount.innerHTML = "0";
+      flipCount=0;
+      unFlipcount=0;
 
       //Clear both arrays that hold the opened and matched cards
 
@@ -212,9 +218,12 @@ function starRating(){
    }
     
    let p = stats.querySelectorAll("p.stats");
-   p[0].innerHTML = "Time to complete: "+ minutes + "Minutes and "+ seconds+"Seconds";
+   p[0].innerHTML = "Time to complete: "+ minutes + " Minutes and "+ seconds+" Seconds";
    p[1].innerHTML = "Moves Taken: "+ moves;
    p[2].innerHTML = "Your Star Rating is:" + starCount + "out of 3";
+
+   document.getElementById('moves-count').innerHTML = moves;
+   
  }
 
  function displayModel() {
