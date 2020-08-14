@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filp Tile</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="container">
+
+        <header class="header">
+        <h1>Memory Game</h1>
+        </header>
+
+        <section class="score-panel">
+
+          <h3>Score Panel</h3>
+
+        
+          <ul id="star-rating" class="star-rating"></ul>
+
+          <span class="moves-counter">0</span>Moves
+
+          
+          <!--Timer bar-->
+          <div class="timer-container">
+            <span id="timeCounter" class="timer"><i class="far fa-hourglass-start"></i>Timer: 00:00</span>
+          </div>
+
+
+          <!--Reset button-->
+          <div class="reset">
+              <button class="btn reset-btn">Reset<i class="far fa-redo"></i></button>
+          </div>
+
+        </section>
+
+        <!--Model-->
+
+        <section class="win-game-model">
+
+            <div id="model" class="model">
+                 
+              <!--Model Content-->
+
+              <div class="model-content">
+
+                <span class="close">&times</span>
+
+                <h2>Congratulations!</h2>
+
+                <p>You have won the game and found all 14 pairs of card.</p>
+
+                <span class="moves-counter">0</span>Moves <br>
+                <span class="moves-counter">0</span>Moves
+
+                <img class="model-img" src="images/Vault-Boy-Thumb-Up.jpg" alt="Vault boy giving the thumbs up from the game fall out">
+
+                <button class="btn play-again-btn"> Play Again?</button>
+
+              </div>
+            </div>
+        </section>
+
+        <ul class="deck"></ul>
+
+    </div>
+
+      <script src="game.js"></script>
+</body>
+</html>
